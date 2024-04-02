@@ -1,9 +1,8 @@
-using CCManager.Core.Common.Json;
-using CCManager.Core.Common.Privacy;
+using SensitiveString.Json;
 using MicrosoftSerialization = System.Text.Json;
 using NewtonsoftSerialization = Newtonsoft.Json;
 
-namespace CCManager.Core.Common.Tests;
+namespace SensitiveString.Tests;
 
 public class SensitiveStringSerializationTest
 {

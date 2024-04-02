@@ -1,6 +1,4 @@
-using CCManager.Core.Common.Privacy;
-
-namespace CCManager.Core.Common.Tests;
+namespace SensitiveString.Tests;
 
 public class SensitiveEmailTest
 {
