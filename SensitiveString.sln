@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString", "SensitiveString\SensitiveString.csproj", "{BFACD806-7D36-4ED7-8FE1-E7457299A6E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString", "src\SensitiveString\SensitiveString.csproj", "{BFACD806-7D36-4ED7-8FE1-E7457299A6E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.EntityFrameworkCore", "SensitiveString.EntityFrameworkCore\SensitiveString.EntityFrameworkCore.csproj", "{39BBD349-62C1-4989-BE0B-52B3A5DFC4C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.EntityFrameworkCore", "src\SensitiveString.EntityFrameworkCore\SensitiveString.EntityFrameworkCore.csproj", "{39BBD349-62C1-4989-BE0B-52B3A5DFC4C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.HotChocolate", "SensitiveString.HotChocolate\SensitiveString.HotChocolate.csproj", "{EA5EA98A-75F8-422F-8858-F9857075584E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.HotChocolate", "src\SensitiveString.HotChocolate\SensitiveString.HotChocolate.csproj", "{EA5EA98A-75F8-422F-8858-F9857075584E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.Swagger", "SensitiveString.Swagger\SensitiveString.Swagger.csproj", "{C3B8ED7F-E680-4364-B9AE-C12019E782E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.Swagger", "src\SensitiveString.Swagger\SensitiveString.Swagger.csproj", "{C3B8ED7F-E680-4364-B9AE-C12019E782E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
