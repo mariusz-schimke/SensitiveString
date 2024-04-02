@@ -1,6 +1,7 @@
 using HotChocolate.Data.Filters;
 using HotChocolate.Data.Sorting;
 using HotChocolate.Execution.Configuration;
+using HotChocolate.Types;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace SensitiveString.HotChocolate;

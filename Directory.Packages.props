@@ -3,6 +3,8 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="HotChocolate" Version="13.9.0" />
+    <PackageVersion Include="HotChocolate.Data" Version="13.9.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
   </ItemGroup>
 </Project>
