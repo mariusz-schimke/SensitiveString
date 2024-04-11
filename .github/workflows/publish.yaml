@@ -1,0 +1,44 @@
+name: Publish a NuGet Package
+
+on:
+  release:
+    types: [ published ]
+
+env:
+  BRANCH: main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build solution
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test --no-restore
+
+      - shell: pwsh
+        name: Create SNK File
+        env:
+          SNK: ${{ secrets.snk }}
+        run: |
+          $snk = [Convert]::FromBase64String("$env:SNK")
+          Set-Content "src\SensitiveString\SensitiveString.snk" -Value $snk -AsByteStream
+
+      - name: Build NuGet Package
+        run: dotnet pack src\SensitiveString\SensitiveString.csproj --configuration Publish -p:Repository=${{ github.repository }} -p:Branch=${{ env.BRANCH }} -p:Commit=${{ github.sha }}
+
+      - name: Publish NuGet Package
+        run: dotnet nuget push src\SensitiveString\bin\Publish\SensitiveString.*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.nuget_api_key }}
