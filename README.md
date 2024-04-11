@@ -51,11 +51,59 @@ The `SensitiveString` and `SensitiveEmail` types are straightforward string wrap
 
 `SensitiveEmail` differs from `SensitiveString` only in how it masks the original value. If you prefer having emails fully masked rather than the login part before @, use the `SensitiveString` instead.
 
-## How to use it in REST APIs?
+
+
+## Serialization/deserialization
 
 In client-server communication we want the information in its original form present in the data being transmitted between the parties. Because, however, of how the types are designed, without explicit handling, serializers will output nothing but an empty object.
 
-Therefore, to use the type in DTOs, you'll need to extend the serializers in use with special converters to handle these types. Converters for the  are part of this repository, but will soon be published 
+Therefore, to use the type in DTOs, you'll need to extend your serializers in use with special converters to handle these types. Converters for the `System.Text.Json.JsonSerializer` are available in this repository and are part of the associated NuGet package. See below how serialization behaves with and without them.
+
+Let's use the same person object as in the example used earlier:
+
+```c#
+using System.Text.Json;
+...
+
+var serialized = JsonSerializer.Serialize(person);
+Console.WriteLine($"Serialized: {serialized}");
+```
+
+This is what we will get as the output:
+
+```
+Serialized: {"Name":"John Doe","PhoneNumber":{},"Email":{}}
+```
+
+As you can see, the sensitive strings are just empty JSON objects `{}`.
+
+Now let's add appropriate converters to serializer options:
+
+```c#
+using System.Text.Json;
+using SensitiveString.Json;
+...
+
+var serializerOptions = new JsonSerializerOptions();
+serializerOptions.AddSensitiveStringSupport();
+
+var serialized = JsonSerializer.Serialize(person, serializerOptions);
+Console.WriteLine($"Serialized: {serialized}");
+```
+
+Now the output is complete:
+
+```
+Serialized: {"Name":"John Doe","PhoneNumber":"(800) 555\u20110123","Email":"john.doe@example.com"}
+```
+
+The same options should be used for deserialization.
+
+## REST API
+
+To make sure your REST API handles the types correctly, call this method on startup:
+
+
 
 ## Disclaimer
 
