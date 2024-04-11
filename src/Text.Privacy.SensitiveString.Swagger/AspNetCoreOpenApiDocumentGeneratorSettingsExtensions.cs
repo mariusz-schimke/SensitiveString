@@ -2,7 +2,7 @@ using NJsonSchema;
 using NJsonSchema.Generation.TypeMappers;
 using NSwag.Generation.AspNetCore;
 
-namespace SensitiveString.Swagger;
+namespace Text.Privacy.SensitiveString.Swagger;
 
 public static class AspNetCoreOpenApiDocumentGeneratorSettingsExtensions
 {

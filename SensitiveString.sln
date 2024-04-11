@@ -1,20 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString", "src\SensitiveString\SensitiveString.csproj", "{BFACD806-7D36-4ED7-8FE1-E7457299A6E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text.Privacy.SensitiveString", "src\Text.Privacy.SensitiveString\Text.Privacy.SensitiveString.csproj", "{BFACD806-7D36-4ED7-8FE1-E7457299A6E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.EntityFrameworkCore", "src\SensitiveString.EntityFrameworkCore\SensitiveString.EntityFrameworkCore.csproj", "{39BBD349-62C1-4989-BE0B-52B3A5DFC4C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text.Privacy.SensitiveString.EntityFrameworkCore", "src\Text.Privacy.SensitiveString.EntityFrameworkCore\Text.Privacy.SensitiveString.EntityFrameworkCore.csproj", "{39BBD349-62C1-4989-BE0B-52B3A5DFC4C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.HotChocolate", "src\SensitiveString.HotChocolate\SensitiveString.HotChocolate.csproj", "{EA5EA98A-75F8-422F-8858-F9857075584E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text.Privacy.SensitiveString.HotChocolate", "src\Text.Privacy.SensitiveString.HotChocolate\Text.Privacy.SensitiveString.HotChocolate.csproj", "{EA5EA98A-75F8-422F-8858-F9857075584E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.Swagger", "src\SensitiveString.Swagger\SensitiveString.Swagger.csproj", "{C3B8ED7F-E680-4364-B9AE-C12019E782E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text.Privacy.SensitiveString.Swagger", "src\Text.Privacy.SensitiveString.Swagger\Text.Privacy.SensitiveString.Swagger.csproj", "{C3B8ED7F-E680-4364-B9AE-C12019E782E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.Tests", "test\SensitiveString.Tests\SensitiveString.Tests.csproj", "{C0B98D42-F2BB-4D5D-A2C2-EA137D9FBF3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text.Privacy.SensitiveString.Tests", "test\Text.Privacy.SensitiveString.Tests\Text.Privacy.SensitiveString.Tests.csproj", "{C0B98D42-F2BB-4D5D-A2C2-EA137D9FBF3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{21EB174C-CED8-40DB-AD4E-E3BF9D9D3EC7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{654EFDB6-8ECD-42CB-A3D6-F7DE361A692B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveString.Examples", "src\SensitiveString.Examples\SensitiveString.Examples.csproj", "{BA642BF0-1C73-469C-9902-FDDD301DA73C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text.Privacy.SensitiveString.Examples", "src\Text.Privacy.SensitiveString.Examples\Text.Privacy.SensitiveString.Examples.csproj", "{BA642BF0-1C73-469C-9902-FDDD301DA73C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
