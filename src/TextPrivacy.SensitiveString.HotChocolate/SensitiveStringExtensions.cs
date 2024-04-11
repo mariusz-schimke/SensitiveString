@@ -4,7 +4,7 @@ using HotChocolate.Execution.Configuration;
 using HotChocolate.Types;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Text.Privacy.SensitiveString.HotChocolate;
+namespace TextPrivacy.SensitiveString.HotChocolate;
 
 public static class SensitiveStringExtensions
 {

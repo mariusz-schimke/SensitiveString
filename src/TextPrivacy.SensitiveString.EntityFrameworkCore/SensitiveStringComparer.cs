@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Text.Privacy.SensitiveString.EntityFrameworkCore;
+namespace TextPrivacy.SensitiveString.EntityFrameworkCore;
 
 public class SensitiveStringComparer : ValueComparer<SensitiveString>
 {

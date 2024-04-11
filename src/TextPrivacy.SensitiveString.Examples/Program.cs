@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using Text.Privacy.SensitiveString;
-using Text.Privacy.SensitiveString.Examples;
-using Text.Privacy.SensitiveString.Json;
+using TextPrivacy.SensitiveString;
+using TextPrivacy.SensitiveString.Examples;
+using TextPrivacy.SensitiveString.Json;
 
 var person = new PersonDto(
     "John Doe",
