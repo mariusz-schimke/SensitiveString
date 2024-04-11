@@ -2,7 +2,7 @@
     <!-- https://www.meziantou.net/creating-reproducible-build-in-dotnet.htm -->
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Configurations>Debug;Release;Publish</Configurations>
         <Platforms>AnyCPU</Platforms>
 
