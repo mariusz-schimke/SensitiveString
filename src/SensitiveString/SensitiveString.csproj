@@ -31,7 +31,7 @@
         <PackageTags>sensitive strings privacy</PackageTags>
 
         <PackageProjectUrl>https://github.com/$(Repository)</PackageProjectUrl>
-        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <!-- <PackageIcon>icon.png</PackageIcon> -->
         <EnablePackageValidation>true</EnablePackageValidation>
