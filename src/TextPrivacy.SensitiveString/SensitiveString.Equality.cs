@@ -1,4 +1,4 @@
-namespace Text.Privacy.SensitiveString;
+namespace TextPrivacy.SensitiveString;
 
 public partial class SensitiveString : IEquatable<SensitiveString>
 {

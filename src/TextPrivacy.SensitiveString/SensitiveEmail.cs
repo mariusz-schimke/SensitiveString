@@ -1,4 +1,4 @@
-namespace Text.Privacy.SensitiveString;
+namespace TextPrivacy.SensitiveString;
 
 /// <summary>
 ///     Encloses a string value in an object to protect it from being written to logs or serialized unintentionally. Provides custom
