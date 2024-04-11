@@ -1,6 +1,6 @@
 using System.Diagnostics.Contracts;
 
-namespace SensitiveString;
+namespace Text.Privacy.SensitiveString;
 
 public static class SensitiveStringExtension
 {

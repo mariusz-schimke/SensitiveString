@@ -1,7 +1,6 @@
-using System;
 using System.Text.Json;
 
-namespace SensitiveString.Json;
+namespace Text.Privacy.SensitiveString.Json;
 
 /// <summary>
 ///     Enables proper JSON conversion of the <see cref="SensitiveString" /> type.
