@@ -119,6 +119,12 @@ builder.Services.ConfigureHttpJsonOptions(
 
 
 
+## EntityFrameworkCore
+
+To use `SensitiveString` and `SensitiveEmail` in database entities, install a dedicated [NuGet package](https://www.nuget.org/packages/SensitiveString.EntityFrameworkCore/).
+
+
+
 ## Disclaimer
 
 This is a proof of concept. If you find any issues using the package or have any thoughts on it, your comments reported as issues are more than welcome!
