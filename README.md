@@ -1,4 +1,6 @@
 # SensitiveString
+[![NuGet Version](http://img.shields.io/nuget/v/SensitiveString.svg?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/SensitiveString/) [![NuGet Downloads](https://img.shields.io/nuget/dt/SensitiveString.svg?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/SensitiveString/)
+
 Introducing SensitiveString, your shield against inadvertent exposure of sensitive information in application logs and beyond.
 
 This lightweight NuGet package wraps strings in a protective layer, ensuring that sensitive data remains secure and inaccessible without explicit handling.
