@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace SensitiveString.EntityFrameworkCore;
+namespace Text.Privacy.SensitiveString.EntityFrameworkCore;
 
 public class SensitiveEmailConverter : ValueConverter<SensitiveEmail, string>
 {

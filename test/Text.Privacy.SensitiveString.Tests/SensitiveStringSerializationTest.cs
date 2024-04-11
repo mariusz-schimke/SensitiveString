@@ -1,8 +1,8 @@
-using SensitiveString.Json;
+using Text.Privacy.SensitiveString.Json;
 using MicrosoftSerialization = System.Text.Json;
 using NewtonsoftSerialization = Newtonsoft.Json;
 
-namespace SensitiveString.Tests;
+namespace Text.Privacy.SensitiveString.Tests;
 
 public class SensitiveStringSerializationTest
 {

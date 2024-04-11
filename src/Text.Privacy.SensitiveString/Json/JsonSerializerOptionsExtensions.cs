@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace SensitiveString.Json;
+namespace Text.Privacy.SensitiveString.Json;
 
 public static class JsonSerializerOptionsExtensions
 {

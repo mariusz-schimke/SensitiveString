@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\SensitiveString\SensitiveString.csproj" />
+      <ProjectReference Include="..\..\src\Text.Privacy.SensitiveString\Text.Privacy.SensitiveString.csproj" />
     </ItemGroup>
 
 </Project>

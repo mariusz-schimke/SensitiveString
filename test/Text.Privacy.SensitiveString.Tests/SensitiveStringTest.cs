@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace SensitiveString.Tests;
+namespace Text.Privacy.SensitiveString.Tests;
 
 public class SensitiveStringTest
 {

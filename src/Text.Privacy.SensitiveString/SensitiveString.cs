@@ -1,6 +1,6 @@
 using System.Diagnostics.Contracts;
 
-namespace SensitiveString;
+namespace Text.Privacy.SensitiveString;
 
 /// <summary>
 ///     Encloses a string value in an object to protect it from being written to logs or serialized unintentionally.
