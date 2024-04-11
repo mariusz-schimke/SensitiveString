@@ -5,7 +5,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Text.Privacy.SensitiveString\Text.Privacy.SensitiveString.csproj" />
+      <ProjectReference Include="..\TextPrivacy.SensitiveString\TextPrivacy.SensitiveString.csproj" />
     </ItemGroup>
 
 </Project>

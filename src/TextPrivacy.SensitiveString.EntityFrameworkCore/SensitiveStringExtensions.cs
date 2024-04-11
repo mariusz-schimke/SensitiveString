@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Text.Privacy.SensitiveString.EntityFrameworkCore;
+namespace TextPrivacy.SensitiveString.EntityFrameworkCore;
 
 public static class SensitiveStringExtensions
 {

@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Text.Privacy.SensitiveString.Json;
+namespace TextPrivacy.SensitiveString.Json;
 
 public abstract class SensitiveStringJsonConverter<TSensitiveString> : JsonConverter<TSensitiveString>
     where TSensitiveString : SensitiveString

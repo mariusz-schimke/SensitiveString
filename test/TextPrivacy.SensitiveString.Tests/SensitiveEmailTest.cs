@@ -1,4 +1,4 @@
-namespace Text.Privacy.SensitiveString.Tests;
+namespace TextPrivacy.SensitiveString.Tests;
 
 public class SensitiveEmailTest
 {
