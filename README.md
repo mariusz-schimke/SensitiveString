@@ -101,7 +101,19 @@ The same options should be used for deserialization.
 
 ## REST API
 
-To make sure your REST API handles the types correctly, call this method on startup:
+To make sure your web API handles the types correctly, call this on startup:
+
+```c#
+builder.Services
+   .AddControllers()
+   .AddJsonOptions(
+        o => o.JsonSerializerOptions.AddSensitiveStringSupport()
+    );
+
+builder.Services.ConfigureHttpJsonOptions(
+    o => o.SerializerOptions.AddSensitiveStringSupport()
+);
+```
 
 
 
