@@ -5,11 +5,22 @@
   <ItemGroup>
     <PackageVersion Include="HotChocolate" Version="13.9.0" />
     <PackageVersion Include="HotChocolate.Data" Version="13.9.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
     <PackageVersion Include="NSwag.Generation.AspNetCore" Version="14.0.7" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.0"/>
-    <PackageVersion Include="xunit" Version="2.4.2"/>
-    <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5"/>
-    <PackageVersion Include="coverlet.collector" Version="6.0.0"/>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageVersion Include="xunit" Version="2.7.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
+    <PackageVersion Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    <PackageVersion Include="SauceControl.InheritDoc" Version="2.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
   </ItemGroup>
 </Project>
