@@ -1,9 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <PackageReference Include="HotChocolate" />
-    <PackageReference Include="HotChocolate.Data" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TextPrivacy.SensitiveString\TextPrivacy.SensitiveString.csproj" />
-  </ItemGroup>
-</Project>
