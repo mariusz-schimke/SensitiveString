@@ -3,8 +3,6 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="HotChocolate" Version="13.9.0" />
-    <PackageVersion Include="HotChocolate.Data" Version="13.9.0" />
     <PackageVersion Include="NSwag.Generation.AspNetCore" Version="14.0.7" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageVersion Include="xunit" Version="2.7.0" />
