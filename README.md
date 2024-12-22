@@ -1,4 +1,5 @@
 # SensitiveString
+
 [![NuGet Version](http://img.shields.io/nuget/v/SensitiveString.svg?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/SensitiveString/) [![NuGet Downloads](https://img.shields.io/nuget/dt/SensitiveString.svg?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/SensitiveString/)
 
 Introducing SensitiveString, your shield against inadvertent exposure of sensitive information in application logs and beyond.
@@ -131,7 +132,14 @@ To use `SensitiveString` and `SensitiveEmail` in GraphQL inputs and responses, i
 
 
 
+## FluentValidation
+
+```c#
+RuleFor(x => (string) x.Email)
+```
+
+
+
 ## Disclaimer
 
 This is a proof of concept. If you find any issues using the package or have any thoughts on it, your comments reported as issues are more than welcome!
-
