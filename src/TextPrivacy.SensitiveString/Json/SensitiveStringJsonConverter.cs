@@ -3,6 +3,10 @@ using System.Text.Json.Serialization;
 
 namespace TextPrivacy.SensitiveString.Json;
 
+/// <summary>
+///     Enables support for descendants of the <see cref="SensitiveString" /> type. The original value wrapped by them is revealed on
+///     object serialization (the original value appears in the output JSON string).
+/// </summary>
 public abstract class SensitiveStringJsonConverter<TSensitiveString> : JsonConverter<TSensitiveString>
     where TSensitiveString : SensitiveString
 {
@@ -15,7 +19,8 @@ public abstract class SensitiveStringJsonConverter<TSensitiveString> : JsonConve
 }
 
 /// <summary>
-///     Enables proper JSON conversion of the <see cref="SensitiveString" /> type.
+///     Enables support for the <see cref="SensitiveString" /> type. The original value wrapped by it is revealed on object
+///     serialization (the original value appears in the output JSON string).
 /// </summary>
 public class SensitiveStringJsonConverter : SensitiveStringJsonConverter<SensitiveString>
 {
