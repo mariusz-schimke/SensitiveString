@@ -117,8 +117,9 @@ builder.Services.ConfigureHttpJsonOptions(
     o => o.SerializerOptions.AddSensitiveStringSupport()
 );
 ```
+### Swagger/OpenAPI documentation
 
-
+To make sure the `SensitiveString` and `SensitiveEmail` types are represented well in your Swagger/OpenApi documentation, install a dedicated [NuGet package](https://www.nuget.org/packages/SensitiveString.NSwag.AspNetCore/).
 
 ## EntityFrameworkCore
 
