@@ -3,7 +3,8 @@ using System.Text.Json;
 namespace TextPrivacy.SensitiveString.Json;
 
 /// <summary>
-///     Enables proper JSON conversion of the <see cref="SensitiveString" /> type.
+///     Enables support for the <see cref="SensitiveEmail" /> type. The original value wrapped by it is revealed on object
+///     serialization (the original value appears in the output JSON string).
 /// </summary>
 public class SensitiveEmailJsonConverter : SensitiveStringJsonConverter<SensitiveEmail>
 {
