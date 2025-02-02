@@ -18,7 +18,7 @@
 
         <Deterministic>true</Deterministic>
 
-        <Version>0.1.1</Version>
+        <Version>0.1.3</Version>
         <IncludeSourceRevisionInInformationalVersion>true</IncludeSourceRevisionInInformationalVersion>
 
         <PackageId>SensitiveString</PackageId>
@@ -67,8 +67,8 @@ See also https://github.com/$(Repository)/releases</PackageReleaseNotes>
 
     <ItemGroup>
         <!-- <None Include="../../assets/icon.png" Pack="true" Visible="false" PackagePath="/" /> -->
-        <None Include="../../LICENSE" Pack="true" Visible="false" PackagePath="/" />
-        <None Include="../../README.md" Pack="true" Visible="false" PackagePath="/" />
+        <None Include="../../LICENSE" Pack="true" Visible="false" PackagePath="/"/>
+        <None Include="../../README.md" Pack="true" Visible="false" PackagePath="/"/>
     </ItemGroup>
 
 </Project>
