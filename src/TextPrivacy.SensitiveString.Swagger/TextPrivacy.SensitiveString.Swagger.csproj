@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <PackageReference Include="NSwag.Generation.AspNetCore" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TextPrivacy.SensitiveString\TextPrivacy.SensitiveString.csproj" />
-  </ItemGroup>
-</Project>

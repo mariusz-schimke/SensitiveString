@@ -2,7 +2,6 @@
     <!-- https://www.meziantou.net/creating-reproducible-build-in-dotnet.htm -->
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
         <Configurations>Debug;Release;Publish</Configurations>
         <Platforms>AnyCPU</Platforms>
 
@@ -27,7 +26,7 @@
         <Product>SensitiveString</Product>
         <Description>Introducing SensitiveString, your shield against inadvertent exposure of sensitive information in application logs and beyond. This lightweight NuGet package wraps strings in a protective layer, ensuring that sensitive data remains secure and inaccessible without explicit handling. Safeguard your users' privacy and your application's integrity effortlessly with SensitiveString.</Description>
         <Authors>Mariusz Schimke</Authors>
-        <Copyright>Copyright © 2024 Mariusz Schimke</Copyright>
+        <Copyright>Copyright © 2024-2025 Mariusz Schimke</Copyright>
         <PackageTags>sensitive strings privacy</PackageTags>
 
         <PackageProjectUrl>https://github.com/$(Repository)</PackageProjectUrl>
