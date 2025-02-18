@@ -8,6 +8,6 @@ namespace TextPrivacy.SensitiveString.Json;
 /// </summary>
 public class SensitiveEmailJsonConverter : SensitiveStringJsonConverter<SensitiveEmail>
 {
-    public override SensitiveEmail Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
-        reader.GetString()?.AsSensitiveEmail()!;
+    public override SensitiveEmail? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
+        reader.GetString()?.AsSensitiveEmail();
 }
