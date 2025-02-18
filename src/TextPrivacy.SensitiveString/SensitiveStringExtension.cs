@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 
 namespace TextPrivacy.SensitiveString;
@@ -11,7 +12,8 @@ public static class SensitiveStringExtension
     ///     The input string to convert.
     /// </param>
     [Pure]
-    public static SensitiveString AsSensitive(this string input) => SensitiveString.FromString(input);
+    [return: NotNullIfNotNull(nameof(input))]
+    public static SensitiveString? AsSensitive(this string? input) => SensitiveString.FromString(input);
 
     /// <summary>
     ///     Converts the input email string to <see cref="SensitiveEmail" />;
@@ -20,5 +22,6 @@ public static class SensitiveStringExtension
     ///     The input email string to convert.
     /// </param>
     [Pure]
-    public static SensitiveEmail AsSensitiveEmail(this string email) => SensitiveEmail.FromString(email);
+    [return: NotNullIfNotNull(nameof(email))]
+    public static SensitiveEmail? AsSensitiveEmail(this string? email) => SensitiveEmail.FromString(email);
 }

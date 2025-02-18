@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 
 namespace TextPrivacy.SensitiveString;
@@ -5,6 +7,7 @@ namespace TextPrivacy.SensitiveString;
 /// <summary>
 ///     Encloses a string value in an object to protect it from being written to logs or serialized unintentionally.
 /// </summary>
+[DebuggerDisplay("{Reveal()}")]
 public partial class SensitiveString
 {
     protected const string DefaultMask = "***";
@@ -28,7 +31,7 @@ public partial class SensitiveString
     {
         if (value is null)
         {
-            throw new ArgumentNullException(nameof(value), "The input sensitive string cannot be null");
+            throw new ArgumentNullException(nameof(value), "The input string must not be null");
         }
 
         _getValue = () => value;
@@ -67,7 +70,8 @@ public partial class SensitiveString
     /// <param name="source">
     ///     The sensitive string whose original value to return.
     /// </param>
-    public static explicit operator string(SensitiveString? source) => source?._getValue()!;
+    [return: NotNullIfNotNull(nameof(source))]
+    public static explicit operator string?(SensitiveString? source) => source?._getValue();
 
     /// <summary>
     ///     Converts a string to a sensitive string.
@@ -79,7 +83,8 @@ public partial class SensitiveString
     ///     Only the explicit conversion is implemented here to make sure there are no unintentional/unnoticed implicit conversions in
     ///     the code where in fact the source string converted should be the sensitive type in the first place.
     /// </remarks>
-    public static explicit operator SensitiveString(string? source) => FromString(source);
+    [return: NotNullIfNotNull(nameof(source))]
+    public static explicit operator SensitiveString?(string? source) => FromString(source);
 
     /// <summary>
     ///     Returns an instance initialized with the specified string. If the string is null, returns null.
@@ -87,5 +92,6 @@ public partial class SensitiveString
     /// <param name="input">
     ///     The input string to initialize the instance with.
     /// </param>
-    public static SensitiveString FromString(string? input) => input is null ? null! : new(input);
+    [return: NotNullIfNotNull(nameof(input))]
+    public static SensitiveString? FromString(string? input) => input is null ? null : new(input);
 }

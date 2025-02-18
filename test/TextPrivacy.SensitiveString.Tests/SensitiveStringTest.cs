@@ -65,7 +65,7 @@ public class SensitiveStringTest
     public void implicit_conversion_from_null_sensitive_string_returns_null()
     {
         SensitiveString? ss = null;
-        var value = (string) ss;
+        var value = (string?) ss;
         Assert.Null(value);
     }
 
@@ -74,9 +74,9 @@ public class SensitiveStringTest
     {
         string?[] strings = ["b", "a", "c", null];
         var sensitiveStrings = strings
-           .Select(x => (SensitiveString?) x)
-           .Order()
-           .Select(x => x?.Reveal());
+            .Select(x => (SensitiveString?) x)
+            .Order()
+            .Select(x => x?.Reveal());
 
         Assert.Equal(strings.Order(), sensitiveStrings);
     }
@@ -86,11 +86,11 @@ public class SensitiveStringTest
     {
         string?[] strings = ["b", "a", "c", null];
         var sensitiveStrings = strings
-           .Select(x => (SensitiveString?) x)
-           .Cast<object>()
-           .Order()
-           .Cast<SensitiveString>()
-           .Select(x => x?.Reveal());
+            .Select(x => (SensitiveString?) x)
+            .Cast<object>()
+            .Order()
+            .Cast<SensitiveString>()
+            .Select(x => x?.Reveal());
 
         Assert.Equal(strings.Order(), sensitiveStrings);
     }
