@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 
 namespace TextPrivacy.SensitiveString;
@@ -5,6 +7,7 @@ namespace TextPrivacy.SensitiveString;
 /// <summary>
 ///     Encloses a string value in an object to protect it from being written to logs or serialized unintentionally.
 /// </summary>
+[DebuggerDisplay("{Reveal()}")]
 public partial class SensitiveString
 {
     protected const string DefaultMask = "***";
