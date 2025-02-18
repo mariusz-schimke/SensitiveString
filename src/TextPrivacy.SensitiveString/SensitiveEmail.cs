@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace TextPrivacy.SensitiveString;
 
 /// <summary>
@@ -30,7 +32,8 @@ public class SensitiveEmail : SensitiveString
     ///     Only the explicit conversion is implemented here to make sure there are no unintentional/unnoticed implicit conversions in
     ///     the code where in fact the source string converted should be the sensitive type in the first place.
     /// </remarks>
-    public static explicit operator SensitiveEmail(string? source) => FromString(source);
+    [return: NotNullIfNotNull(nameof(source))]
+    public static explicit operator SensitiveEmail?(string? source) => FromString(source);
 
     /// <summary>
     ///     Returns an instance initialized with the specified email string. If the string is null, returns null.
@@ -38,5 +41,6 @@ public class SensitiveEmail : SensitiveString
     /// <param name="input">
     ///     The input email string to initialize the instance with.
     /// </param>
-    public new static SensitiveEmail FromString(string? input) => input is null ? null! : new(input);
+    [return: NotNullIfNotNull(nameof(input))]
+    public new static SensitiveEmail? FromString(string? input) => input is null ? null : new(input);
 }

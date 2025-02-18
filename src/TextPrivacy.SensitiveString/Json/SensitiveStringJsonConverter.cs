@@ -24,6 +24,6 @@ public abstract class SensitiveStringJsonConverter<TSensitiveString> : JsonConve
 /// </summary>
 public class SensitiveStringJsonConverter : SensitiveStringJsonConverter<SensitiveString>
 {
-    public override SensitiveString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
-        reader.GetString()?.AsSensitive()!;
+    public override SensitiveString? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
+        reader.GetString()?.AsSensitive();
 }
