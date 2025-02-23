@@ -62,7 +62,7 @@ public partial class SensitiveString
     /// </summary>
     public override string ToString() => Mask(_getValue());
 
-    public override int GetHashCode() => _getValue().GetHashCode();
+    public override int GetHashCode() => HashCode.Combine(typeof(SensitiveString), _getValue());
 
     /// <summary>
     ///     Returns a string with the original value.
