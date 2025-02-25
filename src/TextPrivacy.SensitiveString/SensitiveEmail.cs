@@ -23,6 +23,15 @@ public class SensitiveEmail : SensitiveString
         : base.Mask(value);
 
     /// <summary>
+    ///     Returns an instance initialized with the specified email string. If the string is null, returns null.
+    /// </summary>
+    /// <param name="input">
+    ///     The input email string to initialize the instance with.
+    /// </param>
+    [return: NotNullIfNotNull(nameof(input))]
+    public new static SensitiveEmail? FromString(string? input) => input is null ? null : new SensitiveEmail(input);
+
+    /// <summary>
     ///     Converts an email string to a sensitive email string.
     /// </summary>
     /// <param name="source">
@@ -36,11 +45,15 @@ public class SensitiveEmail : SensitiveString
     public static explicit operator SensitiveEmail?(string? source) => FromString(source);
 
     /// <summary>
-    ///     Returns an instance initialized with the specified email string. If the string is null, returns null.
+    ///     Returns a string with the original value.
     /// </summary>
-    /// <param name="input">
-    ///     The input email string to initialize the instance with.
+    /// <param name="source">
+    ///     The sensitive string whose original value to return.
     /// </param>
-    [return: NotNullIfNotNull(nameof(input))]
-    public new static SensitiveEmail? FromString(string? input) => input is null ? null : new(input);
+    /// <remarks>
+    ///     Although this method may appear redundant since the base class provides the same functionality, it is necessary in scenarios
+    ///     where the operator is resolved via reflection on the current type rather than including its base type. This can occur in
+    ///     frameworks like FluentValidation.
+    /// </remarks>
+    public static explicit operator string?(SensitiveEmail? source) => source?.Reveal();
 }

@@ -65,6 +65,15 @@ public partial class SensitiveString
     public override int GetHashCode() => HashCode.Combine(typeof(SensitiveString), _getValue());
 
     /// <summary>
+    ///     Returns an instance initialized with the specified string. If the string is null, returns null.
+    /// </summary>
+    /// <param name="input">
+    ///     The input string to initialize the instance with.
+    /// </param>
+    [return: NotNullIfNotNull(nameof(input))]
+    public static SensitiveString? FromString(string? input) => input is null ? null : new(input);
+
+    /// <summary>
     ///     Returns a string with the original value.
     /// </summary>
     /// <param name="source">
@@ -85,13 +94,4 @@ public partial class SensitiveString
     /// </remarks>
     [return: NotNullIfNotNull(nameof(source))]
     public static explicit operator SensitiveString?(string? source) => FromString(source);
-
-    /// <summary>
-    ///     Returns an instance initialized with the specified string. If the string is null, returns null.
-    /// </summary>
-    /// <param name="input">
-    ///     The input string to initialize the instance with.
-    /// </param>
-    [return: NotNullIfNotNull(nameof(input))]
-    public static SensitiveString? FromString(string? input) => input is null ? null : new(input);
 }
