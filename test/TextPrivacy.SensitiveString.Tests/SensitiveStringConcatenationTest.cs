@@ -23,14 +23,14 @@ public class SensitiveStringConcatenationTest
 
         s2 = null;
         concat = s1 + s2;
-        Assert.Null(concat);
+        Assert.Empty(concat.Reveal());
 
         concat = s2 + s1;
-        Assert.Null(concat);
+        Assert.Empty(concat.Reveal());
     }
 
     [Fact]
-    public void non_null_string_concat()
+    public void sensitivestring_string_concat()
     {
         var s1 = "hello1".AsSensitive();
         var s2 = "hello2";
@@ -40,42 +40,46 @@ public class SensitiveStringConcatenationTest
 
         concat = s2 + s1;
         Assert.Equal("hello2hello1", concat.Reveal());
-    }
-
-    [Fact]
-    public void null_string_concat()
-    {
-        var s1 = "hello1".AsSensitive();
-        string? s2 = null;
-
-        var concat = s1 + s2;
-        Assert.Equal("hello1", concat.Reveal());
-
-        concat = s2 + s1;
-        Assert.Equal("hello1", concat.Reveal());
 
         s1 = null;
         concat = s1 + s2;
-        Assert.Null(concat);
+        Assert.Equal("hello2", concat.Reveal());
 
         concat = s2 + s1;
-        Assert.Null(concat);
+        Assert.Equal("hello2", concat.Reveal());
+
+        s2 = null;
+        concat = s1 + s2;
+        Assert.Empty(concat.Reveal());
+
+        concat = s2 + s1;
+        Assert.Empty(concat.Reveal());
     }
 
     [Fact]
-    public void null1string_concat()
+    public void sensitivestring_object_concat()
     {
         var s1 = "hello1".AsSensitive();
-        string? s2 = null;
+        object? s2 = "hello2";
 
         var concat = s1 + s2;
-        Assert.Equal("hello1", concat.Reveal());
+        Assert.Equal("hello1hello2", concat.Reveal());
 
         concat = s2 + s1;
-        Assert.Equal("hello1", concat.Reveal());
+        Assert.Equal("hello2hello1", concat.Reveal());
 
         s1 = null;
+        concat = s1 + s2;
+        Assert.Equal("hello2", concat.Reveal());
+
         concat = s2 + s1;
-        Assert.Null(concat);
+        Assert.Equal("hello2", concat.Reveal());
+
+        s2 = null;
+        concat = s1 + s2;
+        Assert.Empty(concat.Reveal());
+
+        concat = s2 + s1;
+        Assert.Empty(concat.Reveal());
     }
 }

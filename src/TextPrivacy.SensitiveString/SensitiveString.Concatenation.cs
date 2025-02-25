@@ -1,49 +1,13 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace TextPrivacy.SensitiveString;
 
+// remark: two concatenated null strings result in an empty string!
 public partial class SensitiveString
 {
-    [return: NotNullIfNotNull(nameof(left))]
-    [return: NotNullIfNotNull(nameof(right))]
-    public static SensitiveString? operator +(SensitiveString? left, SensitiveString? right) =>
-        left?.Reveal() + right?.Reveal() is { } output
-            ? new SensitiveString(output)
-            : null;
+    public static SensitiveString operator +(SensitiveString? left, SensitiveString? right) => new(left?.Reveal() + right?.Reveal());
 
-    #region string
+    public static SensitiveString operator +(SensitiveString? left, string? right) => new(left?.Reveal() + right);
+    public static SensitiveString operator +(string? left, SensitiveString? right) => new(left + right?.Reveal());
 
-    [return: NotNullIfNotNull(nameof(left))]
-    [return: NotNullIfNotNull(nameof(right))]
-    public static SensitiveString? operator +(SensitiveString? left, string? right) =>
-        left?.Reveal() + right is { } output
-            ? new SensitiveString(output)
-            : null;
-
-    [return: NotNullIfNotNull(nameof(left))]
-    [return: NotNullIfNotNull(nameof(right))]
-    public static SensitiveString? operator +(string? left, SensitiveString? right) =>
-        left + right?.Reveal() is { } output
-            ? new SensitiveString(output)
-            : null;
-
-    #endregion
-
-    #region object
-
-    [return: NotNullIfNotNull(nameof(left))]
-    [return: NotNullIfNotNull(nameof(right))]
-    public static SensitiveString? operator +(SensitiveString? left, object? right) =>
-        left?.Reveal() + right is { } output
-            ? new SensitiveString(output)
-            : null;
-
-    [return: NotNullIfNotNull(nameof(left))]
-    [return: NotNullIfNotNull(nameof(right))]
-    public static SensitiveString? operator +(object? left, SensitiveString? right) =>
-        left + right?.Reveal() is { } output
-            ? new SensitiveString(output)
-            : null;
-
-    #endregion
+    public static SensitiveString operator +(SensitiveString? left, object? right) => new(left?.Reveal() + right);
+    public static SensitiveString operator +(object? left, SensitiveString? right) => new(left + right?.Reveal());
 }
