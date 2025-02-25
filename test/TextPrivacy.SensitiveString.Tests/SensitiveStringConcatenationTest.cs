@@ -3,7 +3,7 @@ namespace TextPrivacy.SensitiveString.Tests;
 public class SensitiveStringConcatenationTest
 {
     [Fact]
-    public void sensitivestring_sensitivestring_concat()
+    public void sensitive_string_sensitive_string_concat()
     {
         var s1 = "hello1".AsSensitive();
         var s2 = "hello2".AsSensitive();
@@ -30,7 +30,7 @@ public class SensitiveStringConcatenationTest
     }
 
     [Fact]
-    public void sensitivestring_string_concat()
+    public void sensitive_string_string_concat()
     {
         var s1 = "hello1".AsSensitive();
         var s2 = "hello2";
@@ -57,7 +57,7 @@ public class SensitiveStringConcatenationTest
     }
 
     [Fact]
-    public void sensitivestring_object_concat()
+    public void sensitive_string_object_concat()
     {
         var s1 = "hello1".AsSensitive();
         object? s2 = "hello2";

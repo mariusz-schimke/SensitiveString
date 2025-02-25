@@ -71,16 +71,7 @@ public partial class SensitiveString
     ///     The input string to initialize the instance with.
     /// </param>
     [return: NotNullIfNotNull(nameof(input))]
-    public static SensitiveString? FromString(string? input) => input is null ? null : new(input);
-
-    /// <summary>
-    ///     Returns a string with the original value.
-    /// </summary>
-    /// <param name="source">
-    ///     The sensitive string whose original value to return.
-    /// </param>
-    [return: NotNullIfNotNull(nameof(source))]
-    public static explicit operator string?(SensitiveString? source) => source?._getValue();
+    public static SensitiveString? FromString(string? input) => input is null ? null : new SensitiveString(input);
 
     /// <summary>
     ///     Converts a string to a sensitive string.
@@ -94,4 +85,13 @@ public partial class SensitiveString
     /// </remarks>
     [return: NotNullIfNotNull(nameof(source))]
     public static explicit operator SensitiveString?(string? source) => FromString(source);
+
+    /// <summary>
+    ///     Returns a string with the original value.
+    /// </summary>
+    /// <param name="source">
+    ///     The sensitive string whose original value to return.
+    /// </param>
+    [return: NotNullIfNotNull(nameof(source))]
+    public static explicit operator string?(SensitiveString? source) => source?._getValue();
 }

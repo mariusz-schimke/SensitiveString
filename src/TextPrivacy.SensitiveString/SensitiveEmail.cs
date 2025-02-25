@@ -51,9 +51,15 @@ public class SensitiveEmail : SensitiveString
     ///     The sensitive string whose original value to return.
     /// </param>
     /// <remarks>
-    ///     Although this method may appear redundant since the base class provides the same functionality, it is necessary in scenarios
-    ///     where the operator is resolved via reflection on the current type rather than including its base type. This can occur in
-    ///     frameworks like FluentValidation.
+    ///     Although this method may seem redundant since the base class provides the same functionality, it is required in cases where
+    ///     type conversions are performed dynamically, such as when using expression trees to convert an expression result to a string.
+    ///     In such scenarios, the operator may be resolved directly on the current type without considering its base type, leading to
+    ///     missing or unexpected behavior if this explicit conversion is not defined. Example:
+    ///     <c>
+    ///         Expression.Convert(expression.Body, typeof(string))
+    ///     </c>
+    ///     where Body is of type SensitiveEmail.
     /// </remarks>
+    [return: NotNullIfNotNull(nameof(source))]
     public static explicit operator string?(SensitiveEmail? source) => source?.Reveal();
 }
