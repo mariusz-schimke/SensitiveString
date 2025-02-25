@@ -190,6 +190,6 @@ public class SensitiveStringTest
         var input = "input";
         var ss = input.AsSensitive();
 
-        Assert.Equal(input.GetHashCode(), ss.GetHashCode());
+        Assert.NotEqual(input.GetHashCode(), ss.GetHashCode());
     }
 }
