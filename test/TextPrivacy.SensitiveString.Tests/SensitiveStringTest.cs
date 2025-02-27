@@ -190,8 +190,11 @@ public class SensitiveStringTest
         var input = "input";
         var ss1 = input.AsSensitive();
         var ss2 = input.AsSensitive();
+        var email = input.AsSensitiveEmail();
 
         Assert.Equal(ss1.GetHashCode(), ss2.GetHashCode());
         Assert.NotEqual(input.GetHashCode(), ss1.GetHashCode());
+        Assert.NotEqual(input.GetHashCode(), email.GetHashCode());
+        Assert.NotEqual(ss1.GetHashCode(), email.GetHashCode());
     }
 }
