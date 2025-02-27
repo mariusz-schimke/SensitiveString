@@ -23,6 +23,15 @@ public class SensitiveEmail : SensitiveString
         : base.Mask(value);
 
     /// <summary>
+    ///     Returns an instance initialized with the specified email string. If the string is null, returns null.
+    /// </summary>
+    /// <param name="input">
+    ///     The input email string to initialize the instance with.
+    /// </param>
+    [return: NotNullIfNotNull(nameof(input))]
+    public new static SensitiveEmail? FromString(string? input) => input is null ? null : new SensitiveEmail(input);
+
+    /// <summary>
     ///     Converts an email string to a sensitive email string.
     /// </summary>
     /// <param name="source">
@@ -36,11 +45,21 @@ public class SensitiveEmail : SensitiveString
     public static explicit operator SensitiveEmail?(string? source) => FromString(source);
 
     /// <summary>
-    ///     Returns an instance initialized with the specified email string. If the string is null, returns null.
+    ///     Returns a string with the original value.
     /// </summary>
-    /// <param name="input">
-    ///     The input email string to initialize the instance with.
+    /// <param name="source">
+    ///     The sensitive string whose original value to return.
     /// </param>
-    [return: NotNullIfNotNull(nameof(input))]
-    public new static SensitiveEmail? FromString(string? input) => input is null ? null : new(input);
+    /// <remarks>
+    ///     Although this method may seem redundant since the base class provides the same functionality, it is required in cases where
+    ///     type conversions are performed dynamically, such as when using expression trees to convert an expression result to a string.
+    ///     In such scenarios, the operator may be resolved directly on the current type without considering its base type, leading to
+    ///     missing or unexpected behavior if this explicit conversion is not defined. Example:
+    ///     <c>
+    ///         Expression.Convert(expression.Body, typeof(string))
+    ///     </c>
+    ///     where Body is of type SensitiveEmail.
+    /// </remarks>
+    [return: NotNullIfNotNull(nameof(source))]
+    public static explicit operator string?(SensitiveEmail? source) => source?.Reveal();
 }
