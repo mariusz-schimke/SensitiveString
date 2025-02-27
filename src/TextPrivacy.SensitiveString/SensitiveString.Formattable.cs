@@ -27,7 +27,7 @@ public partial class SensitiveString : IFormattable
         return format?.ToLowerInvariant() switch
         {
             "r" => _getValue(), // revealed
-            { Length: >= 2 } f when f.StartsWith("m:") => format[2..], // return the specified mask
+            ['m', ':', .. var mask] => mask, // return the specified mask
             _ => ToString() // default masking
         };
     }
