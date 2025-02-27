@@ -4,10 +4,13 @@ public partial class SensitiveString : IFormattable
 {
     public string ToString(string? format, IFormatProvider? formatProvider)
     {
-        return format switch
+        return format?.ToLowerInvariant() switch
         {
-            "R" => _getValue(), // revealed
-            _ => ToString() // masked by default
+            "r" => _getValue(), // revealed
+            { Length: > 2 } f when f.StartsWith("m:") => format[2..], // return the specified mask
+            _ => ToString() // default masking
         };
     }
+
+    public string ToString(string? format) => ToString(format, formatProvider: null);
 }
