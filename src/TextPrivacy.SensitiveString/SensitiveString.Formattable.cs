@@ -21,7 +21,6 @@ public partial class SensitiveString : IFormattable
     /// <param name="formatProvider">
     ///     A format provider (currently unused).
     /// </param>
-
     public string ToString(string? format, IFormatProvider? formatProvider)
     {
         return format?.ToLowerInvariant() switch
