@@ -188,8 +188,13 @@ public class SensitiveStringTest
     public void object_hash_code_is_equal_to_the_string_content_hash_code()
     {
         var input = "input";
-        var ss = input.AsSensitive();
+        var ss1 = input.AsSensitive();
+        var ss2 = input.AsSensitive();
+        var email = input.AsSensitiveEmail();
 
-        Assert.Equal(input.GetHashCode(), ss.GetHashCode());
+        Assert.Equal(ss1.GetHashCode(), ss2.GetHashCode());
+        Assert.NotEqual(input.GetHashCode(), ss1.GetHashCode());
+        Assert.NotEqual(input.GetHashCode(), email.GetHashCode());
+        Assert.NotEqual(ss1.GetHashCode(), email.GetHashCode());
     }
 }
