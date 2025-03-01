@@ -27,7 +27,7 @@ public partial class SensitiveString : IFormattable
     /// <exception cref="FormatException">
     ///     Thrown when the format is not recognized.
     /// </exception>
-    public string ToString(string? format, IFormatProvider? formatProvider)
+    public string ToString(string? format, IFormatProvider? formatProvider = null)
     {
         return format?.ToLowerInvariant() switch
         {
@@ -37,7 +37,4 @@ public partial class SensitiveString : IFormattable
             _ => throw new FormatException($"The format '{format}' is not supported.")
         };
     }
-
-    /// <inheritdoc cref="ToString(string?,System.IFormatProvider?)" />
-    public string ToString(string? format) => ToString(format, formatProvider: null);
 }
