@@ -25,9 +25,10 @@ public partial class SensitiveString : IFormattable
     {
         return format?.ToLowerInvariant() switch
         {
-            "r" => _getValue(), // revealed
+            null or "r" => _getValue(), // revealed
             ['m', ':', .. var mask] => mask, // return the specified mask
-            _ => ToString() // default masking
+            "m" => ToString(), // default masking 
+            _ => throw new FormatException($"The format '{format}' is not supported")
         };
     }
 
