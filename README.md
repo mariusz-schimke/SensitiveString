@@ -54,6 +54,8 @@ The `SensitiveString` and `SensitiveEmail` types are straightforward string wrap
 
 `SensitiveEmail` differs from `SensitiveString` only in how it masks the original value. If you prefer having emails fully masked rather than the login part before @, use the `SensitiveString` instead.
 
+**To learn more about design decisions and how the type behaves in terms of conversions, concatenation, formatting, comparison, etc., check the architecture decision record [here](src/ADR/01.%20Behavior.md).**
+
 
 
 ## Serialization/deserialization

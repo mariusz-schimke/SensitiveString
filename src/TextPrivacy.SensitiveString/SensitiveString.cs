@@ -27,7 +27,7 @@ public partial class SensitiveString
     /// <exception cref="ArgumentNullException">
     ///     Thrown when the input string is null.
     /// </exception>
-    protected SensitiveString(string value)
+    protected internal SensitiveString(string value)
     {
         if (value is null)
         {
