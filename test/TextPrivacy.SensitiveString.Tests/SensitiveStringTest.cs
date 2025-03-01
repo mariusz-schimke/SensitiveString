@@ -1,5 +1,3 @@
-using System.Reflection;
-
 namespace TextPrivacy.SensitiveString.Tests;
 
 public class SensitiveStringTest
@@ -32,25 +30,8 @@ public class SensitiveStringTest
     [Fact]
     public void constructor_input_value_cannot_be_null()
     {
-        var input = default(string);
-        Assert.Throws<ArgumentNullException>(() =>
-            {
-                try
-                {
-                    Activator.CreateInstance(
-                        type: typeof(SensitiveString),
-                        bindingAttr: BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.CreateInstance,
-                        binder: null,
-                        args: [input],
-                        culture: null
-                    );
-                }
-                catch (TargetInvocationException e)
-                {
-                    throw e.InnerException!;
-                }
-            }
-        );
+        var input = default(string)!;
+        Assert.Throws<ArgumentNullException>(() => new SensitiveString(input));
     }
 
     [Fact]

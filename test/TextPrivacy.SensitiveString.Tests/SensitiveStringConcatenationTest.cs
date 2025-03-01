@@ -36,24 +36,24 @@ public class SensitiveStringConcatenationTest
         var s2 = "hello2";
 
         var concat = s1 + s2;
-        Assert.Equal("hello1hello2", concat.Reveal());
+        Assert.Equal("hello1hello2", concat);
 
         concat = s2 + s1;
-        Assert.Equal("hello2hello1", concat.Reveal());
+        Assert.Equal("hello2hello1", concat);
 
         s1 = null;
         concat = s1 + s2;
-        Assert.Equal("hello2", concat.Reveal());
+        Assert.Equal("hello2", concat);
 
         concat = s2 + s1;
-        Assert.Equal("hello2", concat.Reveal());
+        Assert.Equal("hello2", concat);
 
         s2 = null;
         concat = s1 + s2;
-        Assert.Empty(concat.Reveal());
+        Assert.Empty(concat);
 
         concat = s2 + s1;
-        Assert.Empty(concat.Reveal());
+        Assert.Empty(concat);
     }
 
     [Fact]

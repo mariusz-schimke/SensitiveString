@@ -8,6 +8,15 @@ namespace TextPrivacy.SensitiveString;
 /// </summary>
 public class SensitiveEmail : SensitiveString
 {
+    /// <summary>
+    ///     Creates a new sensitive email instance.
+    /// </summary>
+    /// <param name="value">
+    ///     The input string to protect.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    ///     Thrown when the input string is null.
+    /// </exception>
     private SensitiveEmail(string value)
         : base(value)
     {
