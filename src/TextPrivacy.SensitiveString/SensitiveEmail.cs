@@ -6,8 +6,22 @@ namespace TextPrivacy.SensitiveString;
 ///     Encloses a string value in an object to protect it from being written to logs or serialized unintentionally. Provides custom
 ///     email masking capabilities.
 /// </summary>
-public class SensitiveEmail(string value) : SensitiveString(value)
+public class SensitiveEmail : SensitiveString
 {
+    /// <summary>
+    ///     Creates a new sensitive email instance.
+    /// </summary>
+    /// <param name="value">
+    ///     The input string to protect.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    ///     Thrown when the input string is null.
+    /// </exception>
+    private SensitiveEmail(string value)
+        : base(value)
+    {
+    }
+
     /// <summary>
     ///     Returns an empty sensitive email string.
     /// </summary>

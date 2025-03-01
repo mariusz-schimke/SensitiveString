@@ -7,10 +7,10 @@ public partial class SensitiveString : IFormattable
     ///     The following formats are supported (case-insensitive):
     ///     <list type="bullet">
     ///         <item>
-    ///             <description><c>R</c> or <c>null</c> – Reveals the original value.</description>
+    ///             <description><c>R</c> – Reveals the original value.</description>
     ///         </item>
     ///         <item>
-    ///             <description><c>M</c> – Masks the value with the default mask.</description>
+    ///             <description><c>M</c> or <c>null</c> – Masks the value with the default mask.</description>
     ///         </item>
     ///         <item>
     ///             <description><c>M:</c> – Applies a custom mask instead of the default one, e.g. <c>M:*</c> will return <c>*</c>.</description>
@@ -31,9 +31,9 @@ public partial class SensitiveString : IFormattable
     {
         return format?.ToLowerInvariant() switch
         {
-            null or "r" => _getValue(), // revealed
+            "r" => _getValue(), // revealed
             ['m', ':', .. var mask] => mask, // return the specified mask
-            "m" => ToString(), // default masking 
+            "m" or null => ToString(), // default masking
             _ => throw new FormatException($"The format '{format}' is not supported.")
         };
     }

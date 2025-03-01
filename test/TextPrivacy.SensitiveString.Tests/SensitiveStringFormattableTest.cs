@@ -3,11 +3,12 @@ namespace TextPrivacy.SensitiveString.Tests;
 public class SensitiveStringFormattableTest
 {
     [Fact]
-    public void r_and_null_reveal_value()
+    public void only_r_reveals_value()
     {
         var ss = "hello".AsSensitive();
 
-        Assert.Equal(ss.Reveal(), $"{ss}");
+        Assert.Equal("***", $"{ss}");
+        Assert.Equal(ss.ToString(), $"{ss}");
         Assert.Equal(ss.Reveal(), $"{ss:R}");
         Assert.Equal(ss.Reveal(), $"{ss:r}");
 

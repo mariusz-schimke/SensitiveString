@@ -53,6 +53,10 @@ See also https://github.com/$(Repository)/releases</PackageReleaseNotes>
         <Optimize>true</Optimize>
     </PropertyGroup>
 
+    <ItemGroup Condition="'$(Configuration)' != 'Publish'">
+        <InternalsVisibleTo Include="TextPrivacy.SensitiveString.Tests" />
+    </ItemGroup>
+    
     <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     </PropertyGroup>
