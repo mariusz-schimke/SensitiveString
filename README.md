@@ -137,6 +137,8 @@ To use `SensitiveString` and `SensitiveEmail` in GraphQL inputs and responses, i
 
 ## FluentValidation
 
+For basic scenarios where a scalar property of a HTTP request needs to be validated, you can simply cast the type to `string` like below. However, there is also a dedicated [NuGet package](https://www.nuget.org/packages/SensitiveString.FluentValidation/) for proper FluentValidation integration.
+
 ```c#
 RuleFor(x => (string) x.Email)
 ```
