@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TextPrivacy.SensitiveString.Examples/TextPrivacy.SensitiveString.Examples.csproj" />
+    <Project Path="src/TextPrivacy.SensitiveString/TextPrivacy.SensitiveString.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/TextPrivacy.SensitiveString.Tests/TextPrivacy.SensitiveString.Tests.csproj" />
+  </Folder>
+</Solution>
