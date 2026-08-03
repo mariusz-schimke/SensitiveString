@@ -6,11 +6,11 @@ namespace TextPrivacy.SensitiveString.Tests;
 
 public class SensitiveStringSerializationTest
 {
-    public static TheoryData<SensitiveString> TestData => new()
-    {
+    public static TheoryData<SensitiveString> TestData =>
+    [
         "sensitive value".AsSensitive(),
         "login@example.com".AsSensitiveEmail()
-    };
+    ];
 
     [Theory]
     [MemberData(nameof(TestData))]
